@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -23,3 +24,11 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+#logo {
+  font-family: 'Bungee', cursive;
+ }
+
+.mainText {
+  font-family: 'Source Sans Pro', sans-serif;
+ }
