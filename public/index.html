@@ -30,7 +30,7 @@
     <nav>
       <span id="logo">tweeter</span>
       <div>
-        <span class="newTweet"><b>Write</b> a new tweet</span>
+        <span class="createTweet"><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
@@ -49,11 +49,19 @@
 ​
     <!-- Page-specific (main) content here -->
     <main class="mainText">
-​        <h1>Imagine</h1>
-        <h2>Flow</h2>
-        <section>
-        Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
       </section>
+
     </main>
   </body>
 
