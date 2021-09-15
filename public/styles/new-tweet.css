@@ -1,12 +1,15 @@
 .text-box {
   outline: 0;
   border-width: 0 0 3px;
-  border-color: black;
   background-color: transparent;
   width: 500px;
   resize: none;
-  font-weight: bold;
   line-height: 0.60;
+}
+
+::placeholder {
+  font-size: 80%;
+  font-weight: 600;
 }
 
 .new-tweet {
