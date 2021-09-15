@@ -2,5 +2,5 @@ node_modules/
 .env
 .DS_Store
 
-./temp-data.md
-./temp-note.md
+.temp-data.md
+.temp-note.md
