@@ -14,14 +14,32 @@ article.tweet-container header {
   justify-content: space-between;
 }
 
-article.tweet-container header div {
+.profile-img {
+  height: auto;
+  width: 50px;
+}
 
+.at-user {
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+article.tweet-container blockquote { /* not working */
+  font-weight: 600;
 }
 
 /* for every article with the class 'tweet-container' find and style footer  */
 article.tweet-container footer {
-
+  display: flex;
+  justify-content: space-between;
+  border-top: solid;
+  padding-top: 8px;
 }
 
+.post-time {
+  font-weight: 600;
+  font-size: small;
+  opacity: 0.5;
+}
 
 
