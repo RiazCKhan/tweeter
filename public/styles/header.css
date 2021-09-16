@@ -1,13 +1,17 @@
-header {
-  padding-top: 6.5em; 
+.flex-banner {
+  display: flex;
+  justify-content: center;
+  background-color: #A0522D;
+  background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
+  height: 410px;
+  width: 100vw
 }
 
-.flex-container {
+.user-avator-name {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: -3%
+  justify-content: flex-end;
 }
 
 .avatar {
@@ -18,11 +22,4 @@ header {
 .name {
   margin: 1px;
   color: white;
-}
-
-.bgImage {
-  background-color: #A0522D;
-  background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
-  height: 440px;
-  width: 100vw
 }
