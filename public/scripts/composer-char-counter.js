@@ -7,7 +7,13 @@ $(document).ready(function () {
   
     let tweetForm = $(this).closest('form');
     let tweetCounter = tweetForm.find('.tweet-counter')
-    tweetCounter.html(140 - tweetLength);
+
+    if (tweetLength < 140) {
+      tweetCounter.html(140 - tweetLength).css("color", "#585858")
+    } else {
+      tweetCounter.html(140 - tweetLength).css("color", "red")
+    }
+
 
     // console.log(tweetForm, 'mentor pt1')
     // console.log(tweetCounter, 'mentor pt2')
@@ -20,13 +26,6 @@ $(document).ready(function () {
     // }
   })
   
-  
-  
-  
-  // console.log($("counter", this))
-  // j query selectors using 'this'
-
-
 
 
 
