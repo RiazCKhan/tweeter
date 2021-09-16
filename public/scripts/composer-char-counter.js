@@ -1,37 +1,14 @@
 $(document).ready(function () {
-
-
   $("#tweet-text").on("input", function (event) {
     const tweetLength = this.value.length
-    // const maxTweet = 10
   
-    let tweetForm = $(this).closest('form');
-    let tweetCounter = tweetForm.find('.tweet-counter')
+    let tweetForm = $(this).closest('form'); // move out of 'this', i.e., #tweet-text to search the DOM Tree using 'closest' to find 'form' DOM Node
+    let tweetCounter = tweetForm.find('.tweet-counter') // from the form DOM Node use 'find' to locate '.tweet-counter'
 
     if (tweetLength < 140) {
-      tweetCounter.html(140 - tweetLength).css("color", "#585858")
+      tweetCounter.html(140 - tweetLength).css("color", "#585858") // .html to access and alter the value found and stored in 'tweetCounter'
     } else {
       tweetCounter.html(140 - tweetLength).css("color", "red")
     }
-
-
-    // console.log(tweetForm, 'mentor pt1')
-    // console.log(tweetCounter, 'mentor pt2')
-    // console.log($(this).find(".tweet-counter"), 'rck');
-    
-    // if (tweetLength < maxTweet) {
-    //   console.log(tweetLength)
-    // } else {
-    //   console.log("-" + tweetLength)
-    // }
-  })
-  
-
-
-
-
-
-
-
-
+  })  
 });
