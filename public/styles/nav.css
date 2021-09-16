@@ -24,7 +24,7 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.fas {
+.fas.fa-angle-double-down{
   padding-top: 5px;
   text-align: center;
   color :red;
