@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,41 +33,56 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="logo">tweeter</span>
-      <div>
+      <div class="write-new">
         <span class="createTweet"><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 ​
-    <header class="bgImage">
-    <section class="flex-container">
-      <div>
+    <section class="flex-banner">
+      <header class="user-avator-name">
+        <div>
           <img class="avatar" src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2 class="name">Your Name</h2>
-      </div>
+        </div>
+          <br>
+        <div>
+          <h2 class="name">RCK</h2>
+        </div>
+      </header>
     </section>
-    </header>
-​
-    <!-- Page-specific (main) content here -->
+    ​
+<!-- Page-specific (main) content here -->
     <main class="mainText">
-
-
+<!-- New Tweet Section/Form -->
       <section class="new-tweet">
         <form action="/tweets/" method="POST">
           <label for="tweet-text"></label>
           <textarea id="tweet-text" class="text-box" name="text" placeholder="What are you humming about?"></textarea>
-
           <div class="flex-form-container">
             <button class="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="tweet-counter" for="tweet-text">140</output>
           </div>
-
         </form>
       </section>
+<!-- All Tweet Container Section -->
+      <section id="all-tweet-container">
 
+          <article class="tweet-container">
+            <header>
+              face img + @Jada 
+            </header>
+            Tweet 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod nisi porta lorem mollis aliquam ut. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis.
+            <footer>
+              time days ago + 3 icons
+            </footer>
+          </article>
+
+          <article class="tweet-container">
+            Tweet 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas. Auctor urna nunc id cursus metus aliquam.
+          </article>
+          
+
+      </section>
 
     </main>
   </body>
