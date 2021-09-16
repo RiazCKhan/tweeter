@@ -30,7 +30,8 @@
   background-color: #4056A1;
 }
 
-.counter {
+.tweet-counter {
   font-size: 85%;
   font-family: 'Bungee', cursive;
+  color: #585858;
 }
