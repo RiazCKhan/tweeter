@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   const tweetData = [
     {
@@ -15,6 +15,17 @@ $(document).ready(function () {
     },
     {
       "user": {
+        "name": "The Original User",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@TOU"
+      },
+      "content": {
+        "text": "I came, I saw, I conquered"
+      },
+      "created_at": 1461113959088
+    },
+    {
+      "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
         "handle": "@rd"
@@ -24,28 +35,17 @@ $(document).ready(function () {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
-  const renderTweets = function (tweets) {
- 
-    tweetData.forEach(tweet => {
-      const keys = Object.keys(tweet)
-      for (let key of keys) {
-        console.log(createTweetElement(key))
-      }
-    })
+  const renderTweets = function(tweets) {
+    let $newTweet = '';
+    tweets.forEach(tweet => {
+      $newTweet += createTweetElement(tweet);
+    });
+    return $newTweet;
+  };
 
-
-    // tweetData.forEach(tweet => {
-    //   for (let key in tweet) {
-    //     console.log(key);
-    //     // console.log(createTweetElement(key))
-    //   }
-    // })
-  }
-  
-
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = `
   <article class="tweet-container">
   <header>
@@ -70,14 +70,11 @@ $(document).ready(function () {
       <i class="fas fa-heart"></i>
     </div>
   </footer>
-  </article>`
+  </article>`;
 
-    return $tweet
+    return $tweet;
   };
 
-  // const $tweet = createTweetElement(tweetData);
-  // $('#all-tweet-container').append($tweet);
-
-  // Temp Func Call
-  renderTweets() 
+  const $newTweet = renderTweets(tweetData);
+  $('#all-tweet-container').append($newTweet);
 });
