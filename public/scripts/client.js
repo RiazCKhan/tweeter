@@ -5,24 +5,21 @@
  */
 
 $(document).ready(function () {
+  // Test / driver code (temporary). Eventually will get this from the server.
+  const tweetData = {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  }
 
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
-
-const createTweetElement = function (tweet) {
-
-  const $tweet = `
+  const createTweetElement = function (tweet) {
+    const $tweet = `
   <article class="tweet-container">
   <header>
     <div class="profile-user">
@@ -33,12 +30,12 @@ const createTweetElement = function (tweet) {
       ${tweet.user.handle}
     </div>
   </header>
-  <blockquote>
-    ${tweet.content.text}
-  </blockquote>
+    <blockquote>
+      ${tweet.content.text}
+    </blockquote>
   <footer>
     <div class="post-time">
-    ${tweet.created_at}
+    ${timeago.format(tweet.created_at)}
     </div>
     <div>
       <i class="fas fa-flag"></i>
@@ -48,11 +45,10 @@ const createTweetElement = function (tweet) {
   </footer>
   </article>`
 
-  return $tweet
-  
-};
+    return $tweet
+  };
 
-const $tweet = createTweetElement(tweetData);
+  const $tweet = createTweetElement(tweetData);
   // Test / driver code (temporary)
   console.log($tweet); // to see what it looks like
   $('#all-tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
