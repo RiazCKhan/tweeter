@@ -32,7 +32,8 @@ article.tweet-container header {
   font-size: 20px
 }
 
-article.tweet-container blockquote { /* not working */
+/* for every article with the class 'tweet-container' find and style blockquote  */
+article.tweet-container blockquote {
   font-weight: 600;
   opacity: 0.6;
   font-size: smaller;
@@ -69,4 +70,6 @@ article.tweet-container footer {
   color: #585858;
   font-size: 15px;
 }
+
+
 
