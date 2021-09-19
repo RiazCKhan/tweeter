@@ -1,60 +1,27 @@
 $(document).ready(function () {
 
-
   $("form").submit(function (event) {
     event.preventDefault();
     const $form = $(this)
-    const $inputText = $form.find("#tweet-text").serialize()
-    $.post("/tweets/", $inputText)
+    const $input = $form.find("#tweet-text").serialize()
+    const $tweetLength =  $form.find('#tweet-text').val().length
+    
+   if ($tweetLength <= 140) {
+     console.log('good')
+    } else {
+      console.log('bad')
+    };
+
+    $.post("/tweets/", $input)
   });
 
-
   const loadTweets = function () {
-    $.ajax("/tweets/", {method: 'GET'})
-    .then(function (tweets) {
-      renderTweets(tweets)
-    })
+    $.ajax("/tweets/", { method: 'GET' })
+      .then(function (tweets) {
+        renderTweets(tweets)
+      })
   }
-loadTweets()
-
-
-// ------- Hard coded users removed with the implementation of the ajax GET request
-  // const tweetData = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "The Original User",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@TOU"
-  //     },
-  //     "content": {
-  //       "text": "I came, I saw, I conquered"
-  //     },
-  //     "created_at": 1461113959088
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ];
+  loadTweets()
 
   const renderTweets = function (tweets) {
     let $newTweet = '';
@@ -93,8 +60,4 @@ loadTweets()
 
     return $tweet;
   };
-
-  // ------- Phase out with the implementation of the GET request + append
-  // const $newTweet = renderTweets(tweetData);
-  // $('#all-tweet-container').append($newTweet); // --> Moved to renderTweet function
 });
