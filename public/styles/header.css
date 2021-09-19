@@ -1,8 +1,9 @@
 .flex-banner {
   display: flex;
   justify-content: center;
-  background-color: #A0522D;
-  background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
+  background-color: #4056A1;;
+  background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+
   height: 410px;
   width: 100vw
 }
@@ -23,3 +24,6 @@
   margin: 1px;
   color: white;
 }
+
+
+
