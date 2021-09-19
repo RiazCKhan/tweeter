@@ -8,6 +8,17 @@ $(document).ready(function () {
     $.post("/tweets/", $inputText)
   });
 
+
+  const loadTweets = function () {
+
+    $.ajax("/tweets/", {method: 'GET'})
+    .then(function () {
+      renderTweets( this )
+    })
+  }
+loadTweets()
+
+
   const tweetData = [
     {
       "user": {
