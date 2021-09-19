@@ -10,58 +10,58 @@ $(document).ready(function () {
 
 
   const loadTweets = function () {
-
     $.ajax("/tweets/", {method: 'GET'})
-    .then(function () {
-      renderTweets( this )
+    .then(function (tweets) {
+      renderTweets(tweets)
     })
   }
 loadTweets()
 
 
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "The Original User",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@TOU"
-      },
-      "content": {
-        "text": "I came, I saw, I conquered"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+// ------- Hard coded users removed with the implementation of the ajax GET request
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "The Original User",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@TOU"
+  //     },
+  //     "content": {
+  //       "text": "I came, I saw, I conquered"
+  //     },
+  //     "created_at": 1461113959088
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
 
   const renderTweets = function (tweets) {
     let $newTweet = '';
     tweets.forEach(tweet => {
       $newTweet += createTweetElement(tweet);
     });
-    return $newTweet;
+    return $('#all-tweet-container').append($newTweet);
   };
 
   const createTweetElement = function (tweet) {
@@ -94,6 +94,7 @@ loadTweets()
     return $tweet;
   };
 
-  const $newTweet = renderTweets(tweetData);
-  $('#all-tweet-container').append($newTweet);
+  // ------- Phase out with the implementation of the GET request + append
+  // const $newTweet = renderTweets(tweetData);
+  // $('#all-tweet-container').append($newTweet); // --> Moved to renderTweet function
 });
