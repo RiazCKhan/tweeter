@@ -1,4 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+
+  $("form").submit(function (event) {
+    event.preventDefault();
+    const $form = $(this)
+    const $inputText = $form.find("#tweet-text").serialize()
+    $.post("/tweets/", $inputText)
+  });
 
   const tweetData = [
     {
@@ -37,7 +45,7 @@ $(document).ready(function() {
     }
   ];
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     let $newTweet = '';
     tweets.forEach(tweet => {
       $newTweet += createTweetElement(tweet);
@@ -45,7 +53,7 @@ $(document).ready(function() {
     return $newTweet;
   };
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     const $tweet = `
   <article class="tweet-container">
   <header>
