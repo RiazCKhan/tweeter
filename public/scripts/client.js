@@ -1,29 +1,30 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
-    const $form = $(this)
-    const $input = $form.find("#tweet-text").serialize()
-    const $tweetLength =  $form.find('#tweet-text').val().length
-    
-   if ($tweetLength <= 140) {
-     console.log('good')
-    } else {
-      console.log('bad')
+    const $form = $(this);
+    const $input = $form.find("#tweet-text").serialize();
+    const $tweetLength = $form.find('#tweet-text').val().length;
+
+    if (!$tweetLength) {
+      return alert("Uh-oh... This tweet does not exist");
+    };
+    if ($tweetLength > 140) {
+      return alert("This tweet is greater than 140 characters");
     };
 
-    $.post("/tweets/", $input)
+    $.post("/tweets/", $input);
   });
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax("/tweets/", { method: 'GET' })
-      .then(function (tweets) {
-        renderTweets(tweets)
-      })
-  }
-  loadTweets()
+      .then(function(tweets) {
+        renderTweets(tweets);
+      });
+  };
+  loadTweets();
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     let $newTweet = '';
     tweets.forEach(tweet => {
       $newTweet += createTweetElement(tweet);
@@ -31,7 +32,7 @@ $(document).ready(function () {
     return $('#all-tweet-container').append($newTweet);
   };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = `
   <article class="tweet-container">
   <header>
