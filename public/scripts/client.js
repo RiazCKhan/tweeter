@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  
   $("form").submit(function(event) {
     event.preventDefault();
     const $form = $(this);
@@ -13,23 +13,27 @@ $(document).ready(function() {
       return alert("This tweet is greater than 140 characters");
     };
 
-    $.post("/tweets/", $input);
+    $.ajax ({
+      url: "/tweets/",
+      type: "POST",
+      data: $input
+    }).done(function() {
+      loadTweets();
+    })
   });
 
   const loadTweets = function() {
-    $.ajax("/tweets/", { method: 'GET' })
+    $.ajax("/tweets/", { method: 'GET', dataType: "json" })
       .then(function(tweets) {
         renderTweets(tweets);
       });
   };
-  loadTweets();
 
   const renderTweets = function(tweets) {
-    let $newTweet = '';
+    $('#all-tweet-container').empty()
     tweets.forEach(tweet => {
-      $newTweet += createTweetElement(tweet);
+      $('#all-tweet-container').prepend(createTweetElement(tweet));
     });
-    return $('#all-tweet-container').append($newTweet);
   };
 
   const createTweetElement = function(tweet) {
@@ -62,3 +66,7 @@ $(document).ready(function() {
     return $tweet;
   };
 });
+
+
+
+
