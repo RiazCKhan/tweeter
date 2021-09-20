@@ -28,6 +28,7 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
+  loadTweets();
 
   const renderTweets = function(tweets) {
     $('#all-tweet-container').empty()
