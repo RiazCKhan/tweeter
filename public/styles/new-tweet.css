@@ -31,6 +31,12 @@
   background-color: #4056A1;
 }
 
+.tweet-button:hover {
+  color: #4056A1;
+  background-color: white;
+  border-color: #4056A1;
+}
+
 .tweet-counter {
   font-size: 85%;
   font-family: 'Bungee', cursive;
