@@ -20,6 +20,9 @@ $(document).ready(function() {
     }).done(function() {
       loadTweets();
     })
+
+    $("form")[0].reset()
+
   });
 
   const loadTweets = function() {
