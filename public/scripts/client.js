@@ -8,21 +8,20 @@ $(document).ready(function() {
 
     if (!$tweetLength) {
       return alert("Uh-oh... This tweet does not exist");
-    };
+    }
     if ($tweetLength > 140) {
       return alert("This tweet is greater than 140 characters");
-    };
+    }
 
-    $.ajax ({
+    $.ajax({
       url: "/tweets/",
       type: "POST",
       data: $input
     }).done(function() {
       loadTweets();
-    })
+    });
 
-    $("form")[0].reset()
-
+    $("form")[0].reset();
   });
 
   const loadTweets = function() {
@@ -34,7 +33,7 @@ $(document).ready(function() {
   loadTweets();
 
   const renderTweets = function(tweets) {
-    $('#all-tweet-container').empty()
+    $('#all-tweet-container').empty();
     tweets.forEach(tweet => {
       $('#all-tweet-container').prepend(createTweetElement(tweet));
     });
