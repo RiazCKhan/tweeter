@@ -24,6 +24,12 @@ $(document).ready(function() {
     $("form")[0].reset();
   });
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const loadTweets = function() {
     $.ajax("/tweets/", { method: 'GET', dataType: "json" })
       .then(function(tweets) {
@@ -31,14 +37,6 @@ $(document).ready(function() {
       });
   };
   loadTweets();
-
-  const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
-  const safeHTML = `<p>${escape(textFromUser)}</p>`;
 
   const renderTweets = function(tweets) {
     $('#all-tweet-container').empty();
@@ -53,19 +51,19 @@ $(document).ready(function() {
   <article class="tweet-container">
   <header>
     <div class="profile-user">
-      <img class="profile-img" src=${tweet.user.avatars}> 
-      <div>${tweet.user.name}</div>
+      <img class="profile-img" src=${escape(tweet.user.avatars)}> 
+      <div>${escape(tweet.user.name)}</div>
     </div>
     <div class="at-user">
-      ${tweet.user.handle}
+      ${escape(tweet.user.handle)}
     </div>
   </header>
     <blockquote>
-      ${tweet.content.text}
+      ${escape(tweet.content.text)}
     </blockquote>
   <footer>
     <div class="post-time">
-    ${timeago.format(tweet.created_at)}
+    ${timeago.format(escape(tweet.created_at))}
     </div>
     <div>
       <i class="fas fa-flag"></i>
