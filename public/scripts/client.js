@@ -5,7 +5,7 @@ $(document).ready(function() {
     const $form = $(this);
     const $input = $form.find("#tweet-text").serialize();
     const $tweetLength = $form.find('#tweet-text').val().length;
-
+    
     if (!$tweetLength) {
       return alert("Uh-oh... This tweet does not exist");
     }
@@ -32,6 +32,14 @@ $(document).ready(function() {
   };
   loadTweets();
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const safeHTML = `<p>${escape(textFromUser)}</p>`;
+
   const renderTweets = function(tweets) {
     $('#all-tweet-container').empty();
     tweets.forEach(tweet => {
@@ -40,6 +48,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweet) {
+
     const $tweet = `
   <article class="tweet-container">
   <header>
@@ -67,6 +76,7 @@ $(document).ready(function() {
   </article>`;
 
     return $tweet;
+    
   };
 });
 
