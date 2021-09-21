@@ -3,6 +3,7 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     const $form = $(this);
+    const tweetCounter = $form.find('.tweet-counter')
     const $input = $form.find("#tweet-text").serialize();
     const $tweetLength = $form.find('#tweet-text').val().length;
     
@@ -18,10 +19,11 @@ $(document).ready(function() {
       type: "POST",
       data: $input
     }).done(function() {
-      loadTweets();
+      loadTweets()
     });
 
     $("form")[0].reset();
+    tweetCounter.html(140)
   });
 
   const escape = function(str) {
