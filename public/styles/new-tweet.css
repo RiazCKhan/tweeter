@@ -1,13 +1,11 @@
 #error-one {
-  border: double red;
-  text-align: center;
   color: red;
+  font-size: large;
 }
 
 #error-two {
-  border: double red;
-  text-align: center;
   color: red;
+  font-size: large;
 }
 
 .text-box {
