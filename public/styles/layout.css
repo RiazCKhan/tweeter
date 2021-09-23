@@ -40,3 +40,15 @@ body {
 .mainText {
   font-family: 'Source Sans Pro', sans-serif;
  }
+
+/* desktop */
+@media only screen and (min-width: 1024px) {
+  #resize {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem;
+  }
+  .new-tweet {
+    margin-top: 10rem;
+  }
+}
