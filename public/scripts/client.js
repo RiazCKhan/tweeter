@@ -1,18 +1,37 @@
 $(document).ready(function() {
   
+  $("#error-one").hide()
+  $("#error-two").hide()
+
   $("form").submit(function(event) {
     event.preventDefault();
     const $form = $(this);
-    const tweetCounter = $form.find('.tweet-counter')
+    const $tweetCounter = $form.find('.tweet-counter')
     const $input = $form.find("#tweet-text").serialize();
-    const $tweetLength = $form.find('#tweet-text').val().length;
-    
-    if (!$tweetLength) {
-      return alert("Uh-oh... This tweet does not exist");
-    }
-    if ($tweetLength > 140) {
-      return alert("This tweet is greater than 140 characters");
-    }
+    const $tweetLength = $form.find('#tweet-text').val().length;      
+    const $errorOne = $form.find("#error-one")
+    const $errorTwo = $form.find("#error-two")
+    const $tweetButton = $form.find(".tweet-button")
+
+if (!$tweetLength) {
+  $errorOne.slideDown("slow", function(){
+    // $tweetButton.click(function() {
+    //   $errorOne.slideUp("slow")
+    // })
+  })
+  return false
+}
+if ($tweetLength > 140) {
+  $errorTwo.slideDown("slow", function(){
+    $tweetCounter.css("color", "#585858")
+    $tweetCounter.html(140)
+  })
+  return false
+}
+if ($tweetLength) {
+  $errorOne.slideUp(600)
+  $errorTwo.slideUp(600)
+}
 
     $.ajax({
       url: "/tweets/",
@@ -23,7 +42,7 @@ $(document).ready(function() {
     });
 
     $("form")[0].reset();
-    tweetCounter.html(140)
+    $tweetCounter.html(140)
   });
 
   const escape = function(str) {
