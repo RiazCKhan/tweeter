@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    
     <!-- External Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,17 +56,10 @@
 <!-- Page-specific (main) content here -->
     <main class="mainText">
 <!-- New Tweet Section/Form -->
-      <section class="new-tweet">
-
-
-
-        
-        
-        
+      <section class="new-tweet">   
         <form action="/tweets/" method="POST">
           <div id="error-one" class="tweet-text">⚠️ Uh-oh... This tweet does not exist ⚠️</div>
-          <div id="error-two" class="tweet-text">⚠️ This tweet is greater than 140 characters ⚠️</div>
-            
+          <div id="error-two" class="tweet-text">⚠️ This tweet is greater than 140 characters ⚠️</div>   
           <label for="tweet-text"></label>
           <textarea id="tweet-text" class="text-box" name="text" placeholder="What are you humming about?"></textarea>
           <div class="flex-form-container">
@@ -78,10 +70,8 @@
       </section>
 <!-- All Tweet Container Section -->
       <section id="all-tweet-container">
-
       </section>
 
     </main>
   </body>
-
 </html>
