@@ -14,11 +14,7 @@ $(document).ready(function() {
     const $tweetButton = $form.find(".tweet-button")
 
 if (!$tweetLength) {
-  $errorOne.slideDown("slow", function(){
-    // $tweetButton.click(function() {
-    //   $errorOne.slideUp("slow")
-    // })
-  })
+  $errorOne.slideDown("slow")
   return false
 }
 if ($tweetLength > 140) {
