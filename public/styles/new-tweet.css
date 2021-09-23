@@ -1,3 +1,15 @@
+#error-one {
+  border: double red;
+  text-align: center;
+  color: red;
+}
+
+#error-two {
+  border: double red;
+  text-align: center;
+  color: red;
+}
+
 .text-box {
   outline: 0;
   border-width: 0 0 3px;
