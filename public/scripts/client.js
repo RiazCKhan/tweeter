@@ -1,44 +1,43 @@
 $(document).ready(function() {
   
-  $("#error-one").hide()
-  $("#error-two").hide()
+  $("#error-one").hide();
+  $("#error-two").hide();
 
   $("form").submit(function(event) {
     event.preventDefault();
     const $form = $(this);
-    const $tweetCounter = $form.find('.tweet-counter')
+    const $tweetCounter = $form.find('.tweet-counter');
     const $input = $form.find("#tweet-text").serialize();
-    const $tweetLength = $form.find('#tweet-text').val().length;      
-    const $errorOne = $form.find("#error-one")
-    const $errorTwo = $form.find("#error-two")
-    const $tweetButton = $form.find(".tweet-button")
+    const $tweetLength = $form.find('#tweet-text').val().length;
+    const $errorOne = $form.find("#error-one");
+    const $errorTwo = $form.find("#error-two");
 
-if (!$tweetLength) {
-  $errorOne.slideDown("slow")
-  return false
-}
-if ($tweetLength > 140) {
-  $errorTwo.slideDown("slow", function(){
-    $tweetCounter.css("color", "#585858")
-    $tweetCounter.html(140)
-  })
-  return false
-}
-if ($tweetLength) {
-  $errorOne.slideUp(600)
-  $errorTwo.slideUp(600)
-}
+    if (!$tweetLength) {
+      $errorOne.slideDown("slow");
+      return false;
+    };
+    if ($tweetLength > 140) {
+      $errorTwo.slideDown("slow", function() {
+        $tweetCounter.css("color", "#585858");
+        $tweetCounter.html(140);
+      });
+      return false;
+    };
+    if ($tweetLength) {
+      $errorOne.slideUp("slow");
+      $errorTwo.slideUp("slow");
+    };
 
     $.ajax({
       url: "/tweets/",
       type: "POST",
       data: $input
     }).done(function() {
-      loadTweets()
+      loadTweets();
     });
 
     $("form")[0].reset();
-    $tweetCounter.html(140)
+    $tweetCounter.html(140);
   });
 
   const escape = function(str) {
@@ -94,7 +93,3 @@ if ($tweetLength) {
     
   };
 });
-
-
-
-
