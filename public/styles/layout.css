@@ -30,21 +30,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
- };
+  margin: auto
+ }
 #logo {
   font-family: 'Bungee', cursive;
- };
+ }
 .mainText {
   font-family: 'Source Sans Pro', sans-serif;
- };
+ }
 @media only screen and (min-width: 1024px) {/* desktop */
   #resize {
   display: flex;
   align-items: flex-start;
-  margin: 1rem;
-  };
+  margin: 1rem
+  }
   .new-tweet {
     margin-top: 10rem;
-  };
+  }
 };

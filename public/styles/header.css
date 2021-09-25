@@ -4,28 +4,28 @@
   background-color: #4056A1;;
   background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
   height: 410px;
-  width: 100vw;
-};
+  width: 100vw
+}
 .user-avator-name {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-};
+  justify-content: flex-end
+}
 .avatar {
   height: 230px;
-  width: auto;
-};
+  width: auto
+}
 .name {
   margin: 1px;
-  color: white;
-};
+  color: white
+}
 @media only screen and (min-width: 1024px) {
   .flex-banner {
     height: 21rem;
     width: 38rem;
     margin: 1rem;
     margin-top: 10rem;
-    border: solid white 2px;
-  };
-};
+    border: solid white 2px
+  }
+}

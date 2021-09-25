@@ -14,19 +14,19 @@
   top: 0;
   z-index: 9999;
   border: 2px;
-  border-style: solid;
-};
+  border-style: solid
+}
 .write-new {
   display: flex;
-  flex-direction: column;  
-};
+  flex-direction: column 
+}
 .createTweet {
   font-size: 20px;
-  font-family: 'Source Sans Pro', sans-serif;
-};
+  font-family: 'Source Sans Pro', sans-serif
+}
 .fas.fa-angle-double-down{
   padding-top: 5px;
   text-align: center;
   color :red;
-  font-size: 20px;
-};
+  font-size: 20px
+}
