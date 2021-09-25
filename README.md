@@ -1,7 +1,5 @@
 # Tweeter Project
 
-# Tweeter Project
-
 ## WELCOME TO MY TWEETER APP !
 
 Tweeter is a simple, single-page Twitter built with JS, Node, jQuery, AJAX, Express, MongoDB, HTML, and CSS !
