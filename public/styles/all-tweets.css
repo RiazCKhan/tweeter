@@ -6,67 +6,54 @@
   width: 600px;
   border: solid;
   border-color: black;
-}
-
-/* for every article with the class 'tweet-container' find and style header  */
-article.tweet-container header {
+};
+article.tweet-container header { /* for every article with the class 'tweet-container' find and style header  */
   display: flex;
   justify-content: space-between;
-}
-
+};
 .profile-user {
   display: flex;
   align-items: center;
   font-size: 20px
-}
-
+};
 .profile-img {
   height: auto;
   width: 40px;
   margin-right: 10px
-}
-
+};
 .at-user {
   font-weight: 600;
   opacity: 0.4;
   font-size: 20px
-}
-
-/* for every article with the class 'tweet-container' find and style blockquote  */
-article.tweet-container blockquote {
+};
+article.tweet-container blockquote { /* for every article with the class 'tweet-container' find and style blockquote  */
   font-weight: 600;
   opacity: 0.6;
   font-size: smaller;
   margin-right: 20px;
   margin-left: 20px;
-}
-
-/* for every article with the class 'tweet-container' find and style footer  */
-article.tweet-container footer {
+};
+article.tweet-container footer { /* for every article with the class 'tweet-container' find and style footer  */
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: solid;
   padding-top: 8px;
-}
-
+};
 .post-time {
   font-weight: 600;
   font-size: small;
   opacity: 0.5;
-}
-
+};
 .fas.fa-heart {
   color: #585858;
   font-size: 15px;
-}
-
+};
 .fas.fa-flag {
   color: #585858;
   font-size: 15px;
-}
-
+};
 .fas.fa-retweet {
   color: #585858;
   font-size: 15px;
-}
+};
