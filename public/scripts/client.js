@@ -1,7 +1,6 @@
 $(document).ready(function() {
   
-  $("#error-one").hide();
-  $("#error-two").hide();
+  $("#error").hide();
 
   $("form").submit(function(event) {
     event.preventDefault();
@@ -9,15 +8,14 @@ $(document).ready(function() {
     const $tweetCounter = $form.find('.tweet-counter');
     const $input = $form.find("#tweet-text").serialize();
     const $tweetLength = $form.find('#tweet-text').val().length;
-    const $errorOne = $form.find("#error-one");
-    const $errorTwo = $form.find("#error-two");
+    const $error = $form.find("#error");
 
     if (!$tweetLength) {
-      $errorOne.slideDown("slow");
+      $error.text("Uh-oh... This tweet does not exist").slideDown("slow");
       return false;
     };
     if ($tweetLength > 140) {
-      $errorTwo.slideDown("slow", function() {
+      $error.text("This tweet is greater than 140 characters").slideDown("slow", function() {
         $tweetCounter.css("color", "#585858");
         $tweetCounter.html(140);
       });
