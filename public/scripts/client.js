@@ -17,7 +17,6 @@ $(document).ready(function() {
     if ($tweetLength > 140) {
       $error.text("This tweet is greater than 140 characters").slideDown("slow", function() {
         $tweetCounter.css("color", "#585858");
-        $tweetCounter.html(140);
       });
       return false;
     };
@@ -34,7 +33,6 @@ $(document).ready(function() {
     });
 
     $("form")[0].reset();
-    $tweetCounter.html(140);
   });
 
   const escape = function(str) {
