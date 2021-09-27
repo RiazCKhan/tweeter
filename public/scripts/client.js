@@ -22,8 +22,7 @@ $(document).ready(function() {
       return false;
     };
     if ($tweetLength) {
-      $errorOne.slideUp("slow");
-      $errorTwo.slideUp("slow");
+      $error.slideUp("slow");
     };
 
     $.ajax({
